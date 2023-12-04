@@ -53,15 +53,20 @@ namespace prac12
         private void ClearInputs_Click(object sender, RoutedEventArgs e)
         {
             // Очищаем значения текстовых полей блока "Исходные данные"
-     
+            tbX1.Text = "";
+            tbX2.Text = "";
+            tbY1.Text = "";
+            tbY2.Text = "";
+            tbNum.Text = "";
         }
         private void ClearRezult_Click(object sender, RoutedEventArgs e)
         {
-     
+            lb1.Items.Clear();
+            tblStatus.Text = "";
         }
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
         {
-            if (double.TryParse(tbX1.Text, out double x1) && double.TryParse(tbX2.Text, out double x2) && double.TryParse(tbX3.Text, out double x3) && double.TryParse(tbY1.Text, out double y1) && double.TryParse(tbY2.Text, out double y2) && double.TryParse(tbY3.Text, out double y3) && int.TryParse(tbNum.Text, out int number))
+            if (double.TryParse(tbX1.Text, out double x1) && double.TryParse(tbX2.Text, out double x2) && double.TryParse(tbY1.Text, out double y1) && double.TryParse(tbY2.Text, out double y2) && int.TryParse(tbNum.Text, out int number))
             {
                 // Устанавливаем фокус на первый элемент блока "Исходные данные"
                 tbX1.Focus();
@@ -75,8 +80,16 @@ namespace prac12
                 double area = width * height;
 
                 // Выводим результаты на экран
-                PerimeterLabel.Content = $"Периметр: {perimeter}";
-                AreaLabel.Content = $"Площадь: {area}";
+                lb1.Items.Add($"Периметр: {perimeter}\r\nПлощадь: {area}");
+
+     
+
+                // Вычисляем количество полных килобайтов
+                number = number / 1024;
+
+                // Выводим результат на экран
+
+                lb1.Items.Add($"Размер в килобайтах: {perimeter}");
 
                 // Обновляем строку статуса
                 tblStatus.Text = $"Задача #13 | {DateTime.Now:dd.MM.yyyy HH:mm:ss}";

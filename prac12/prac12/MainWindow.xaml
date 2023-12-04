@@ -13,7 +13,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Menu Grid.ColumnSpan="2" VerticalAlignment="">
+        <Menu Grid.ColumnSpan="2" VerticalAlignment="Top">
             <MenuItem Header="File">
                 <MenuItem Header="Exit" Click="btnExit_Click"/>
             </MenuItem>

@@ -71,6 +71,7 @@ namespace prac12
                 // Устанавливаем фокус на первый элемент блока "Исходные данные"
                 tbX1.Focus();
 
+                lb1.Items.Add($"x1 = {x1}, x2 = {x2}, y1 = {y1}, y2 = {y2}, {number} байт");
                 // Вычисляем длину и ширину прямоугольника
                 double width = Math.Abs(x2 - x1);
                 double height = Math.Abs(y2 - y1);
@@ -89,7 +90,7 @@ namespace prac12
 
                 // Выводим результат на экран
 
-                lb1.Items.Add($"Размер в килобайтах: {perimeter}");
+                lb1.Items.Add($"Размер в килобайтах: {number}");
 
                 // Обновляем строку статуса
                 tblStatus.Text = $"Задача #13 | {DateTime.Now:dd.MM.yyyy HH:mm:ss}";
